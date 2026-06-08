@@ -16,7 +16,7 @@ public class Main {
 
         System.out.println("Leyendo el archivo data.csv...");
         try{
-            File archivo = new File("data.csv");
+            File archivo = new File("burguer_data.csv");
             Scanner lector = new Scanner(archivo);
 
             int idPedidoActual = -1;
@@ -27,44 +27,6 @@ public class Main {
                 if (linea.isEmpty()) continue;
                 String[] partes = linea.split("#");
 
-//                if (partes.length >= 10){
-//                    // Cliente
-//                    Cliente c = new Cliente();
-//                    c.setNombre(partes[0]);
-//                    c.setApellidos(partes[1]);
-//                    c.setDni(partes[2]);
-//                    c.setEmail(partes[3]);
-//                    c.setTelefono(partes[4]);
-//                    c.setDireccion(partes[5]);
-//                    datos.getClientes().add(c);
-//
-//                    // Pedido
-//                    Pedido p = new Pedido();
-//                    p.setId_pedido(Integer.parseInt(partes[6]));
-//                    p.setDni_cliente(partes[2]);
-//                    p.setFecha_pedido(partes[7]);
-//                    p.setNum_lineas(Integer.parseInt(partes[8]));
-//                    p.setTotal_pedido(Double.parseDouble(partes[9]));
-//                    datos.getPedidos().add(p);
-//
-//                    // Guardamos ID del pedido, pa ponerselo a los productos
-//                    idPedidoActual = p.getId_pedido();
-//                } else if (partes.length >= 5) {
-//                    // Producto
-//                    Producto prod = new Producto();
-//                    prod.setId_producto(Integer.parseInt(partes[1]));
-//                    prod.setDescripcion(partes[2]);
-//                    prod.setPrecio_unitario(Double.parseDouble(partes[4]));
-//                    datos.getProductos().add(prod);
-//
-//                    // Linea pedido
-//                    LineaPedido lp = new LineaPedido();
-//                    lp.setId_pedido(idPedidoActual);
-//                    lp.setId_producto(prod.getId_producto());
-//                    lp.setCantidad(Integer.parseInt(partes[3]));
-//                    lp.setPrecio_unitario(prod.getPrecio_unitario());
-//                    datos.getLineas_pedido().add(lp);
-//                }
                 if (partes[0].equals("")){
                     Producto p = new Producto();
                     p.setId_producto(Integer.parseInt(partes[1]));

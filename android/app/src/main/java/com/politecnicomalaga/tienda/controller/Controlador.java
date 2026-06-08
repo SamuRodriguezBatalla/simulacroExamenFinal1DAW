@@ -1,10 +1,8 @@
 package com.politecnicomalaga.tienda.controller;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import com.politecnicomalaga.tienda.MainActivity;
 import com.politecnicomalaga.tienda.Reaccionable;
 import com.politecnicomalaga.tienda.dataservice.BBDDAccess;
 import com.politecnicomalaga.tienda.model.*;
@@ -68,15 +66,15 @@ public class Controlador {
         List<String> resultado = new ArrayList<>();
         if (modoActual == MODO_PRODUCTOS){
             for (Producto p: listaProductos){
-                resultado.add(p.getId_producto()+" - "+p.getDescripcion()+" - "+p.getPrecio_unitario()+"€");
+                resultado.add(p.getId_producto()+" - "+p.getNombre()+" - "+p.getPrecio()+"€");
             }
         } else if (modoActual == MODO_CLIENTES){
             for (Cliente c: listaClientes){
-                resultado.add(c.getDni()+" - "+c.getNombre()+" - "+c.getApellidos());
+                resultado.add(c.getDni()+" - "+c.getNombre()+" - "+c.getEmail());
             }
         } else if (modoActual == MODO_BUSCAR_CLIENTE) {
             for (Cliente c : listaClientesBusqueda) {
-                resultado.add(c.getDni()+" - "+c.getNombre()+" - "+c.getApellidos());
+                resultado.add(c.getDni()+" - "+c.getNombre()+ " - "+c.getEmail());
             }
         }
         return resultado;
