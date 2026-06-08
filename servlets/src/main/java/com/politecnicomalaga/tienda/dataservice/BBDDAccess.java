@@ -131,7 +131,7 @@ public class BBDDAccess {
             // 3. Importar pedidos
             // (Debe ir después de Clientes porque la BBDD exige que el DNI ya exista)
             if (datos.getPedidos() != null) {
-                String sql = "INSERT IGNORE INTO pedidos (id_pedido, dni_cliente, fecha, total) VALUES (?, ?, ?)";
+                String sql = "INSERT IGNORE INTO pedidos (id_pedido, dni_cliente, fecha, total) VALUES (?, ?, ?, ?)";
                 PreparedStatement pstmt = conn.prepareStatement(sql);
 
                 for (Pedido p : datos.getPedidos()) {
