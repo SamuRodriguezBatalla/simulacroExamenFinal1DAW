@@ -16,7 +16,7 @@ public class Main {
 
         System.out.println("Leyendo el archivo data.csv...");
         try{
-            File archivo = new File("burguer_data.csv");
+            File archivo = new File("burger_data.csv");
             Scanner lector = new Scanner(archivo);
 
             int idPedidoActual = -1;

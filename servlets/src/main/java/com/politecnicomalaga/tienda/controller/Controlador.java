@@ -66,8 +66,9 @@ public class Controlador implements DataAccess{
             return "{\"resultado\": \"ok\"}";
 
         } catch (Exception e) {
-            return "{\"resultado\": \"error\"}";
-
+            System.err.println("ERROR EN LA IMPORTACIÓN: "+e.getMessage());
+            e.printStackTrace();
+            return "{\"resultado\": \"error\", \"detalle\": \"" + e.getMessage() + "\"}";
         }
     }
 
